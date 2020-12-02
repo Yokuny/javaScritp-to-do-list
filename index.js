@@ -1,7 +1,7 @@
 // pegando os elementos de lista, a entrada e o botão
-var elementList = document.querySelector('#app ul');
-var inputElement = document.querySelector('#app input');
-var buttonElement = document.querySelector('#app button');
+var elementList = document.querySelector('#listContent ul');
+var inputElement = document.querySelector('#listContent input');
+var buttonElement = document.querySelector('#listContent button');
 // lista de tarefas a serem acrescentadas no dom
 // var list = ['Correr', 'Meditar', 'Ler', 'Ajudar minha mãe', 'Alongar', 'Beber 1L de agua'];
 var list = JSON.parse(localStorage.getItem('archive')) || ['Correr', 'Meditar', 'Ler', 'Ajudar minha mãe', 'Alongar', 'Beber 1L de agua'];
@@ -16,16 +16,16 @@ function renderList(){
     elementList.innerHTML = '';
     for(item of list){
         var taskElement = document.createElement('li'); //cria uma tag que podemos preencher e seguida
-        var todoText = document.createTextNode(item); //TextNode adiciona conteudo dentro da tag
-        taskElement.appendChild(todoText); //acrescenta conteudo a tag li
-        // função de remover itens
         var linkElement = document.createElement('a'); // criamos um elemnto que recebe uma tag tipo a, preenchida com o texto remove
         linkElement.setAttribute('href', '#'); //prenche requisitos da tag a
-        var linkText = document.createTextNode('remove'); // adicionamos ao objeto da que possui a li taskElement
+        var linkText = document.createTextNode('·'); // adicionamos ao objeto da que possui a li taskElement
         linkElement.appendChild(linkText); //o conteudo 'remove' a tag 'a'
+        var listText = document.createTextNode(item); //TextNode adiciona conteudo dentro da tag
+        taskElement.appendChild(linkElement); //acrescenta link de remove a todos itens da lista
+        taskElement.appendChild(listText); //acrescenta conteudo a tag li
+        // função de remover itens
         var position = list.indexOf(item); // buscando a posição de qual elemento a ser removido e passando para a função
         linkElement.setAttribute('onclick', 'deleteTask(' + position + ')'); //onclick passamos a função deletask com valor numerico de position
-        taskElement.appendChild(linkElement); //acrescenta link de remove a todos itens da lista
 
         elementList.appendChild(taskElement); //o elemento para o html
     }
@@ -51,5 +51,5 @@ function saveTasks(){
     localStorage.setItem('archive', JSON.stringify(list)); //nome do arquivo e a variavel a ser salva transformada em JSON
 }
 renderList();
-// ao click em #app button executamos a função addTask
+// ao click em #listContent button executamos a função addTask
 buttonElement.onclick = addTask;

@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --background: rgba(17, 19, 20, 1);
+    --font: rgba(119, 198, 153, 1);
+    --select: rgba(165, 99, 119, 1);
+    --details1: rgba(102, 102, 102, .5);
+    --details2: rgba(102, 102, 102, .32);
+    --details3: rgba(102, 102, 102, 0.25);
+}
+*, font{
+    color: var(--font);
+}
+body{
+    height: 100vh;
+    width: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+}
+body #listContent{
+    margin-top: 10vh;
+    height: 100%;
+}
+body #listContent ul{
+    list-style-type: none;
+}
+body #listContent li a{
+    padding-right: 0.8vw;
+    text-decoration: none;
+    font-weight: 1000;
+    color: var(--select);
+}
+body #listContent .buttons{
+    margin-top:1vh;
+    display: flex;
+    align-items: center;
+}
+body #listContent #taskInput{
+    border: none;
+    padding-left: 0.5vw;
+    height: 3vh;
+    background-color: var(--details3);
+}
+body #listContent #taskInput:hover{
+    background-color: var(--details2);
+}
+body #listContent #sendButton{
+    border: none;
+    height: 3vh;
+    width: 3vh;
+    background-color: var(--details2);
+}
+body #listContent #sendButton:hover{
+    background-color: var(--details1);
+}
