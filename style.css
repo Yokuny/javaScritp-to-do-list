@@ -8,6 +8,7 @@
     --details1: rgba(102, 102, 102, .5);
     --details2: rgba(102, 102, 102, .32);
     --details3: rgba(102, 102, 102, 0.25);
+    --details4: rgba(102, 102, 102, 0.1);
 }
 *, font{
     color: var(--font);
@@ -21,7 +22,7 @@ body{
     background-color: var(--background);
 }
 body #listContent{
-    margin-top: 10vh;
+    padding-top: 8vh;
     height: 100%;
 }
 body #listContent ul{
@@ -38,6 +39,7 @@ body #listContent .buttons{
     height: 30px;
     display: flex;
     align-items: center;
+    margin-bottom: 8vh;
 }
 body #listContent .buttons #taskInput{
     height: 28px;
@@ -56,4 +58,18 @@ body #listContent .buttons #sendButton{
 }
 body #listContent .buttons #sendButton:hover{
     background-color: var(--details1);
+}
+/*  */
+body #background{
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    transform: translateX(-25%) translateY(-50%);
+    z-index: -2;
+}
+body #background code{
+    color: var(--details4);
+    font-size: 20px;
+    line-height: 40px;
+    box-sizing: border-box;
 }

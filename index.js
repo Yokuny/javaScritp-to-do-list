@@ -12,6 +12,8 @@ var list = JSON.parse(localStorage.getItem('archive')) || ['Correr', 'Meditar', 
 // criando um elemento tag li
 // e preenchendo o li com texto da posição atual da lista sendo percorrida
 // depois adicionamos o li com conteudo no elementList com o ul
+var tasksAddCount = 0;
+var tasksDeleteCount = 0;
 function renderList(){
     elementList.innerHTML = '';
     for(item of list){
@@ -36,6 +38,8 @@ function renderList(){
 // e renderizamos a pagina novamente com a nova tarefa
 function addTask(){
     var taskText = inputElement.value;
+    tasksAddCount++;
+    document.querySelector('#tasksAddCount').innerHTML = `| ${tasksAddCount} added tasks `
     list.push(taskText);
     inputElement.value = '';
     renderList();
@@ -43,6 +47,8 @@ function addTask(){
 }
 function deleteTask(position){
     list.splice(position, 1); //apaga um elemento na posição vinda de position
+    tasksDeleteCount++;
+    document.querySelector('#tasksDeleteCount').innerHTML = `| ${tasksDeleteCount} deleted tasks `
     renderList();
     saveTasks();
 }

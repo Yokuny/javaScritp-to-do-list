@@ -4,6 +4,12 @@
 
 ### 🏠 [Homepage](https://yokuny.github.io/javaScritp-to-do-list/)
 
+## Usage
+
+```sh
+You can enter your tasks. this app will save them and you can delete them by clicking on the pink circles next to the list
+```
+
 ## Author
 
 👤 **Felipe**

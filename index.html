@@ -7,7 +7,8 @@
     <title>List</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onpagehide='leftThePage()' onpageshow='pageShowed()' onkeypress='keysPressed()'>
+    
     <div id="listContent">
         <ul></ul>
         <form class="buttons">
@@ -15,6 +16,27 @@
             <button id="sendButton"></button>
         </form>
     </div>
+    <div id="background">
+        <code id="osInfo">-</code>
+        <code id="userCPUClocks">-</code>
+        <code id="userNavigator">-</code>
+        <code id="vendorInfo">-</code>
+        <code id="navigatorInfo">-</code>
+        <code id="windowSize">-</code>
+        <code id="contentSize">-</code>
+        <code id="mouseClick">haven't clicked yet</code>
+        <code id="mouseClicksCount">haven't clicked yet</code>
+        <code id="keysPressed">haven't pressed yet</code>
+        <code id="mouseMovePage">-</code>
+        <code id="mouseMoveClient">-</code>
+        <code id="acessData">-</code>
+        <code id="pageShowed">-</code>
+        <code id="leftThePage">-</code>
+        <code id="actualDate">-</code>
+        <code id="tasksAddCount">-</code>
+        <code id="tasksDeleteCount">-</code>
+    </div>
+    <script type="application/javascript" src="background.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
